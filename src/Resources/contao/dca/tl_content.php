@@ -9,7 +9,7 @@ $GLOBALS['TL_DCA']['tl_content']['palettes'][DialogContentController::TYPE] = '
   {title_legend},name,type;
   alpdeskDialogText,alpdeskDialogUnfilteredHtml;
   alpdeskDialogOpenDelay,alpdeskDialogScrollDelay,alpdeskDialogOpenButtonLabel;
-  alpdeskDialogDisableBackdrop,alpdeskDialogDisablePreventScroll;
+  alpdeskDialogDisableBackdrop,alpdeskDialogDisablePreventScroll,alpdeskDialogPosition;
   {template_legend:hide},customTpl;
   {expert_legend:hide},cssID
 ';
@@ -70,3 +70,12 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['alpdeskDialogDisablePreventScroll'] 
     'eval' => array('tl_class' => 'w50 m12'),
     'sql' => array('type' => 'boolean', 'default' => false)
 );
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['alpdeskDialogPosition'] = [
+    'exclude' => true,
+    'search' => false,
+    'inputType' => 'select',
+    'options' => array('center', 'top-center', 'top-left', 'top-right', 'bottom-center', 'bottom-left', 'bottom-right'),
+    'eval' => array('mandatory' => true, 'tl_class' => 'w50'),
+    'sql' => "varchar(250) NOT NULL default 'center'"
+];

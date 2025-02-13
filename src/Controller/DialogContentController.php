@@ -57,6 +57,7 @@ class DialogContentController extends AbstractContentElementController
         $template->set('dialogOpenButtonLabel', (string)($model->alpdeskDialogOpenButtonLabel ?? ''));
         $template->set('dialogPreventScroll', $preventScroll);
         $template->set('dialogBackdrop', $backDrop);
+        $template->set('dialogPosition', (string)($model->alpdeskDialogPosition ?? 'center'));
         $template->set('closeIconUrl', $this->packages->getUrl('images/close.svg', 'alpdesk_dialog'));
 
         return $template->getResponse();

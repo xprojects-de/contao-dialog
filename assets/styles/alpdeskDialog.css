@@ -12,6 +12,30 @@ dialog[data-alpdeskdialog-target="dialog"] {
     background: #fff;
 }
 
+dialog[data-alpdeskdialog-position="top-center"] {
+    margin: 0 auto auto auto;
+}
+
+dialog[data-alpdeskdialog-position="top-left"] {
+    margin: 0 auto auto 0;
+}
+
+dialog[data-alpdeskdialog-position="top-right"] {
+    margin: 0 0 auto auto;
+}
+
+dialog[data-alpdeskdialog-position="bottom-center"] {
+    margin: auto auto 0 auto;
+}
+
+dialog[data-alpdeskdialog-position="bottom-left"] {
+    margin: auto auto 0 0;
+}
+
+dialog[data-alpdeskdialog-position="bottom-right"] {
+    margin: auto 0 0 auto;
+}
+
 @keyframes alpdesk-fade-in {
     0% {
         opacity: 0;
@@ -27,6 +51,24 @@ dialog[data-alpdeskdialog-target="dialog"] {
     }
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes alpdesk-slide-in {
+    from {
+        transform: translateY(15%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes alpdesk-slide-out {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10%);
     }
 }
 

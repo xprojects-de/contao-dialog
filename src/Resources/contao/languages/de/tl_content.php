@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogText'] = array('Text', 'Dialog-Inhalt - Text');
-$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogUnfilteredHtml'] = array('Html', 'Dialog-Inhalt - ungefilterte HTML');
-$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogOpenDelay'] = array('Wartezeit (in s)', 'Wartezeit in Sekunden bis der Dialog automatisch angezeigt wird');
-$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogScrollDelay'] = array('Scrollwert (in %)', 'Scrollwert in Prozent bis der Dialog automatisch angezeigt wird');
-$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogOpenButtonLabel'] = array('Button-Label', 'Button-Label wenn ein Button zum Öffnen angezeigt werden soll');
-$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogDisableBackdrop'] = array('Backdrop deaktivieren', '');
-$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogDisablePreventScroll'] = array('Body-Scrolling erlauben', '');
+$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogText'] = array('Dialog Text', 'Dialog-Inhalt - Text');
+$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogUnfilteredHtml'] = array('Dialog Html', 'Dialog-Inhalt - ungefilterte HTML');
+$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogOpenDelay'] = array('Dialog Wartezeit (in s)', 'Wartezeit in Sekunden bis der Dialog automatisch angezeigt wird');
+$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogScrollDelay'] = array('Dialog Scrollwert (in %)', 'Scrollwert in Prozent bis der Dialog automatisch angezeigt wird');
+$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogOpenButtonLabel'] = array('Dialog Button-Label', 'Button-Label wenn ein Button zum Öffnen angezeigt werden soll');
+$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogDisableBackdrop'] = array('Dialog Backdrop deaktivieren', '');
+$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogDisablePreventScroll'] = array('Dialog Body-Scrolling erlauben', '');
+$GLOBALS['TL_LANG']['tl_content']['alpdeskDialogPosition'] = array('Dialog Position', '');
