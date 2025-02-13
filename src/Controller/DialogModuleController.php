@@ -28,8 +28,20 @@ class DialogModuleController extends AbstractFrontendModuleController
         $GLOBALS['TL_BODY'][] = '<script src="' . $this->packages->getUrl('alpdeskDialog.js', 'alpdesk_dialog') . '"></script>';
         $GLOBALS['TL_CSS'][] = $this->packages->getUrl('alpdeskDialog.css', 'alpdesk_dialog');
 
+        $dialogContent = '';
+
+        $textContent = ($model->alpdeskDialogText ?? '');
+        if (\trim($textContent) !== '') {
+            $dialogContent .= $textContent;
+        }
+
+        $htmlContent = ($model->alpdeskDialogUnfilteredHtml ?? '');
+        if (\trim($htmlContent) !== '') {
+            $dialogContent .= $htmlContent;
+        }
+
         $template->dialogId = $model->id;
-        $template->dialogContent = ($model->unfilteredHtml ?? '');
+        $template->dialogContent = $dialogContent;
 
         return $template->getResponse();
     }
