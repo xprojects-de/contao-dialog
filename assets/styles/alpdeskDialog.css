@@ -34,3 +34,13 @@ dialog[data-alpdeskdialog-target="dialog"][open] {
 dialog[data-alpdeskdialog-target="dialog"][closing] {
     animation: fade-out 300ms forwards;
 }
+
+dialog[data-alpdeskdialog-target="dialog"] .alpdeskDialogClose {
+    text-align: right;
+}
+
+dialog[data-alpdeskdialog-target="dialog"] .alpdeskDialogClose button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
