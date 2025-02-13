@@ -8,7 +8,6 @@
     "overlay"
   ],
   "type": "contao-bundle",
-  "version": "0.0.2",
   "homepage": "https://github.com/xprojects-de/contao-dialog",
   "license": "MIT",
   "require": {
