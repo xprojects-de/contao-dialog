@@ -5,3 +5,4 @@
 /var/
 /node_modules/
 .idea
+.run
