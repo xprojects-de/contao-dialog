@@ -1,0 +1,27 @@
+includes:
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor/phpstan/phpstan-phpunit/rules.neon
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - vendor/phpstan/phpstan-symfony/rules.neon
+    - vendor/slam/phpstan-extensions/conf/symfony-rules.neon
+
+parameters:
+    level: 6
+
+    paths:
+        - %currentWorkingDirectory%/src
+
+    universalObjectCratesClasses:
+        - Contao\Model
+        - Contao\BackendUser
+
+    excludePaths:
+        - %currentWorkingDirectory%/src/Resources/*
+
+    ignoreErrors:
+        - '#Access to an undefined property Contao\\Database#'
+        - '#Access to an undefined property Contao\\DataContainer#'
+        - '#Cannot access property \$[a-zA-Z0-9\\_]+ on array<Contao\\MemberModel>|Contao\\Model\\Collection<Contao\\MemberModel>.#'
+        - identifier: missingType.iterableValue
+
+    treatPhpDocTypesAsCertain: false

@@ -1,0 +1,62 @@
+{
+  "name": "alpdesk/contao-dialog",
+  "description": "Dialog, Popup, Overlay for Contao based on Stimulus",
+  "keywords": [
+    "contao",
+    "dialog",
+    "popup",
+    "overlay"
+  ],
+  "type": "contao-bundle",
+  "homepage": "https://github.com/xprojects-de/contao-dialog",
+  "license": "MIT",
+  "require": {
+    "php": "^8.3",
+    "contao/core-bundle": "^5.3",
+    "symfony/asset": "^6.4 || ^7.0"
+  },
+  "conflict": {
+    "contao/manager-plugin": "<2.0 || >=3.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "contao/manager-plugin": "^2.0",
+    "contao/manager-bundle": "^5.3",
+    "phpstan/phpstan": "^2.0",
+    "phpstan/phpstan-phpunit": "^2.0",
+    "phpstan/phpstan-symfony": "^2.0",
+    "slam/phpstan-extensions": "^6.0",
+    "phpunit/phpunit": "^9.5",
+    "symfony/phpunit-bridge": "^6.4"
+  },
+  "authors": [
+    {
+      "name": "XProjects",
+      "homepage": "https://x-projects.de",
+      "email": "infos@x-projects.de",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/xprojects-de/contao-dialog/issues"
+  },
+  "autoload": {
+    "psr-4": {
+      "Alpdesk\\AlpdeskDialog\\": "src/"
+    }
+  },
+  "extra": {
+    "contao-manager-plugin": "Alpdesk\\AlpdeskDialog\\ContaoManager\\Plugin",
+    "contao-component-dir": "public"
+  },
+  "config": {
+    "contao-component-dir": "public",
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true,
+      "contao-community-alliance/composer-plugin": true,
+      "contao-components/installer": true,
+      "contao/manager-plugin": true,
+      "php-http/discovery": true
+    }
+  }
+}
