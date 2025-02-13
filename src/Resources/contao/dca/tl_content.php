@@ -10,7 +10,7 @@ $GLOBALS['TL_DCA']['tl_content']['palettes'][DialogContentController::TYPE] = '
   {title_legend},name,type;
   alpdeskDialogText,alpdeskDialogUnfilteredHtml;
   alpdeskDialogOpenDelay,alpdeskDialogScrollDelay,alpdeskDialogOpenButtonLabel;
-  alpdeskDialogDisableBackdrop,alpdeskDialogDisablePreventScroll,alpdeskDialogPosition;
+  alpdeskDialogPosition,alpdeskDialogDisableModal;
   {template_legend:hide},customTpl;
   {expert_legend:hide},cssID;
   {invisible_legend:hide},invisible,start,stop
@@ -19,7 +19,7 @@ $GLOBALS['TL_DCA']['tl_content']['palettes'][DialogContentController::TYPE] = '
 $GLOBALS['TL_DCA']['tl_content']['palettes'][NestedDialogContentController::TYPE] = '
   {title_legend},name,type;
   alpdeskDialogOpenDelay,alpdeskDialogScrollDelay,alpdeskDialogOpenButtonLabel;
-  alpdeskDialogDisableBackdrop,alpdeskDialogDisablePreventScroll,alpdeskDialogPosition;
+  alpdeskDialogPosition,alpdeskDialogDisableModal;
   {template_legend:hide},customTpl;
   {expert_legend:hide},cssID;
   {invisible_legend:hide},invisible,start,stop
@@ -68,14 +68,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['alpdeskDialogOpenButtonLabel'] = [
     'sql' => "varchar(250) NOT NULL default ''"
 ];
 
-$GLOBALS['TL_DCA']['tl_content']['fields']['alpdeskDialogDisableBackdrop'] = array
-(
-    'inputType' => 'checkbox',
-    'eval' => array('tl_class' => 'w50 m12'),
-    'sql' => array('type' => 'boolean', 'default' => false)
-);
-
-$GLOBALS['TL_DCA']['tl_content']['fields']['alpdeskDialogDisablePreventScroll'] = array
+$GLOBALS['TL_DCA']['tl_content']['fields']['alpdeskDialogDisableModal'] = array
 (
     'inputType' => 'checkbox',
     'eval' => array('tl_class' => 'w50 m12'),

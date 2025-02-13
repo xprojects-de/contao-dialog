@@ -9,8 +9,8 @@ export default class AlpdeskDialogController extends Dialog {
         scrolldelay: {
             type: Number, default: 0
         },
-        backdrop: {
-            type: Boolean, default: false
+        modal: {
+            type: Boolean, default: true
         }
     }
 
@@ -49,9 +49,9 @@ export default class AlpdeskDialogController extends Dialog {
 
     open() {
 
-        const backdrop = this.backdropValue;
-        if (backdrop === true) {
-            super.open();
+        const isModal = this.modalValue;
+        if (isModal === true) {
+            this.dialogTarget.showModal();
         } else {
             this.dialogTarget.show();
         }
@@ -60,8 +60,8 @@ export default class AlpdeskDialogController extends Dialog {
 
     backdropClose(event) {
 
-        const backdrop = this.backdropValue;
-        if (backdrop === true) {
+        const isModal = this.modalValue;
+        if (isModal === true) {
             super.backdropClose(event);
         }
 

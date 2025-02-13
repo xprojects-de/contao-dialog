@@ -1,70 +1,65 @@
 
-body:has(dialog[data-alpdeskdialog-preventScroll="true"][open]) {
+body:has(dialog[data-alpdeskdialog-modal-value="true"][open]) {
     overflow: hidden;
 }
 
-dialog[data-alpdeskdialog-backdrop="true"] {
+div[data-alpdeskdialog-modal-value="true"] dialog {
     box-shadow: 0 0 0 100vw rgb(0 0 0 / 0.5);
 }
 
-dialog[data-alpdeskdialog-target="dialog"] {
-    border: none;
-    background: #fff;
-}
-
-dialog[data-alpdeskdialog-position="top-center"] {
+div[data-alpdeskdialog-position="top-center"] dialog {
     margin: 0 auto auto auto;
 }
 
-dialog[data-alpdeskdialog-backdropposition="false-top-center"] {
+div[data-alpdeskdialog-modalposition="false-top-center"] dialog {
     position: fixed;
     top: 0;
 }
 
-dialog[data-alpdeskdialog-position="top-left"] {
+div[data-alpdeskdialog-position="top-left"] dialog {
     margin: 0 auto auto 0;
 }
 
-dialog[data-alpdeskdialog-backdropposition="false-top-left"] {
+div[data-alpdeskdialog-modalposition="false-top-left"] dialog {
     position: fixed;
     top: 0;
     left: 0;
 }
 
-dialog[data-alpdeskdialog-position="top-right"] {
+div[data-alpdeskdialog-position="top-right"] dialog {
     margin: 0 0 auto auto;
 }
 
-dialog[data-alpdeskdialog-backdropposition="false-top-right"] {
+div[data-alpdeskdialog-modalposition="false-top-right"] dialog {
     position: fixed;
     top: 0;
     right: 0;
 }
 
-dialog[data-alpdeskdialog-position="bottom-center"] {
+div[data-alpdeskdialog-position="bottom-center"] dialog {
     margin: auto auto 0 auto;
 }
 
-dialog[data-alpdeskdialog-backdropposition="false-bottom-center"] {
+div[data-alpdeskdialog-modalposition="false-bottom-center"] dialog {
     position: fixed;
     bottom: 0;
 }
 
-dialog[data-alpdeskdialog-position="bottom-left"] {
+div[data-alpdeskdialog-position="bottom-left"] dialog {
     margin: auto auto 0 0;
 }
 
-dialog[data-alpdeskdialog-backdropposition="false-bottom-left"] {
+div[data-alpdeskdialog-modalposition="false-bottom-left"] dialog {
     position: fixed;
     bottom: 0;
     left: 0;
 }
 
-dialog[data-alpdeskdialog-position="bottom-right"] {
+div[data-alpdeskdialog-position="bottom-right"] dialog {
     margin: auto 0 0 auto;
 }
 
-dialog[data-alpdeskdialog-backdropposition="false-bottom-right"] {
+div[data-alpdeskdialog-modalposition="false-bottom-right"] dialog {
     position: fixed;
     bottom: 0;
     right: 0;
@@ -86,6 +81,11 @@ dialog[data-alpdeskdialog-backdropposition="false-bottom-right"] {
     100% {
         opacity: 0;
     }
+}
+
+dialog[data-alpdeskdialog-target="dialog"] {
+    border: none;
+    background: #fff;
 }
 
 dialog[data-alpdeskdialog-target="dialog"][open] {

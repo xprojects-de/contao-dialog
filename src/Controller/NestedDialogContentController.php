@@ -29,14 +29,9 @@ class NestedDialogContentController extends AbstractContentElementController
         $GLOBALS['TL_BODY'][] = '<script src="' . $this->packages->getUrl('alpdeskDialog.js', 'alpdesk_dialog') . '"></script>';
         $GLOBALS['TL_CSS'][] = $this->packages->getUrl('alpdeskDialog.css', 'alpdesk_dialog');
 
-        $preventScroll = 'true';
-        if ($model->alpdeskDialogDisablePreventScroll === true || $model->alpdeskDialogDisablePreventScroll === '1') {
-            $preventScroll = 'false';
-        }
-
-        $backDrop = 'true';
-        if ($model->alpdeskDialogDisableBackdrop === true || $model->alpdeskDialogDisableBackdrop === '1') {
-            $backDrop = 'false';
+        $isModal = 'true';
+        if ($model->alpdeskDialogDisableModal === true || $model->alpdeskDialogDisableModal === '1') {
+            $isModal = 'false';
         }
 
         $cssID = StringUtil::deserialize($model->cssID, true);
@@ -46,8 +41,7 @@ class NestedDialogContentController extends AbstractContentElementController
         $template->set('dialogOpenDelay', (int)($model->alpdeskDialogOpenDelay ?? 0));
         $template->set('dialogScrollDelay', (int)($model->alpdeskDialogScrollDelay ?? 0));
         $template->set('dialogOpenButtonLabel', (string)($model->alpdeskDialogOpenButtonLabel ?? ''));
-        $template->set('dialogPreventScroll', $preventScroll);
-        $template->set('dialogBackdrop', $backDrop);
+        $template->set('dialogModal', $isModal);
         $template->set('dialogPosition', (string)($model->alpdeskDialogPosition ?? 'center'));
         $template->set('closeIconUrl', $this->packages->getUrl('images/close.svg', 'alpdesk_dialog'));
 
