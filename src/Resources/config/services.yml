@@ -6,4 +6,4 @@ services:
 
   Alpdesk\AlpdeskDialog\:
     resource: ../../
-    exclude: ../../{Resources}
+    exclude: ../../{ContaoManager,DependencyInjection,Resources}
