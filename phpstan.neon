@@ -19,7 +19,6 @@ parameters:
         - %currentWorkingDirectory%/src/Resources/*
 
     ignoreErrors:
-        - '#Cannot access property \$[a-zA-Z0-9\\_]+ on array<Contao\\MemberModel>|Contao\\Model\\Collection<Contao\\MemberModel>.#'
         - identifier: missingType.iterableValue
 
     treatPhpDocTypesAsCertain: false
