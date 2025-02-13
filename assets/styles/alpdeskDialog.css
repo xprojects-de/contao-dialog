@@ -100,6 +100,10 @@ dialog[data-alpdeskdialog-target="dialog"] .alpdeskDialogClose {
     text-align: right;
 }
 
+dialog[data-alpdeskdialog-target="dialog"] button:focus {
+    outline: none;
+}
+
 dialog[data-alpdeskdialog-target="dialog"] .alpdeskDialogClose button {
     border: none;
     background: none;
