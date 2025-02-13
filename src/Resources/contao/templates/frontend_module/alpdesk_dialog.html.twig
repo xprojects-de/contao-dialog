@@ -6,7 +6,7 @@
 
         <div class="alpdeskDialogClose">
             <button data-action="alpdeskdialog#close" autofocus>
-                <img src="{{ closeIconUrl }}" alt="close dialog" title="close dialog" width="30">
+                <img src="{{ closeIconUrl }}" alt="" title="" width="30">
             </button>
         </div>
 
@@ -16,5 +16,9 @@
 
     </dialog>
 
-    <button type="button" data-action="alpdeskdialog#open">Open modal</button>
+    {% if dialogOpenButtonLabel != '' %}
+        <button type="button" class="alpdeskDialogOpenAction"
+                data-action="alpdeskdialog#open">{{ dialogOpenButtonLabel }}</button>
+    {% endif %}
+
 </div>
