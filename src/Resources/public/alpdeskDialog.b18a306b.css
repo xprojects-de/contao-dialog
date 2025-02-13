@@ -1,1 +1,0 @@
-body:has(dialog[data-alpdeskdialog-target=dialog][open]){overflow:hidden}dialog{box-shadow:0 0 0 100vw rgba(0,0,0,.5)}@keyframes fade-in{0%{opacity:0}to{opacity:1}}@keyframes fade-out{0%{opacity:1}to{opacity:0}}dialog[data-alpdeskdialog-target=dialog][open]{animation:fade-in .2s forwards}dialog[data-alpdeskdialog-target=dialog][closing]{animation:fade-out .2s forwards}

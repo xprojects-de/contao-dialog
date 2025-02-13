@@ -1,11 +1,12 @@
-/* Prevent scrolling while dialog is open */
+
 body:has(dialog[data-alpdeskdialog-target="dialog"][open]) {
     overflow: hidden;
 }
 
-/* Customize the dialog backdrop */
-dialog {
+dialog[data-alpdeskdialog-target="dialog"] {
     box-shadow: 0 0 0 100vw rgb(0 0 0 / 0.5);
+    border: none;
+    background: #fff;
 }
 
 @keyframes fade-in {
@@ -26,11 +27,10 @@ dialog {
     }
 }
 
-/* Add animations */
 dialog[data-alpdeskdialog-target="dialog"][open] {
-    animation: fade-in 200ms forwards;
+    animation: fade-in 300ms forwards;
 }
 
 dialog[data-alpdeskdialog-target="dialog"][closing] {
-    animation: fade-out 200ms forwards;
+    animation: fade-out 300ms forwards;
 }
