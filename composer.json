@@ -1,6 +1,6 @@
 {
   "name": "alpdesk/contao-dialog",
-  "description": "Dialog, Popup, Overlay for Contao based on Stimulus",
+  "description": "Dialog, Popup, Overlay for Contao based on HTML Dialog and Hotwire-Stimulus",
   "keywords": [
     "contao",
     "dialog",
