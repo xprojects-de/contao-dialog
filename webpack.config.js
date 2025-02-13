@@ -3,7 +3,7 @@ const Encore = require('@symfony/webpack-encore');
 Encore
     .setOutputPath('src/Resources/public/')
     .setPublicPath('/bundles/alpdeskdialog')
-    .setManifestKeyPrefix('alpdeskdialog')
+    .setManifestKeyPrefix('')
     .cleanupOutputBeforeBuild()
     .disableSingleRuntimeChunk()
     .enableSourceMaps(!Encore.isProduction())

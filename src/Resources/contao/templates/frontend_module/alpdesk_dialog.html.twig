@@ -1,1 +1,9 @@
-Hello Dialog
+<div data-controller="alpdeskdialog" data-action="click->alpdeskdialog#backdropClose">
+    <dialog data-alpdeskdialog-target="dialog">
+        <p>The modal's content here</p>
+
+        <button type="button" data-action="alpdeskdialog#close" autofocus>Cancel</button>
+    </dialog>
+
+    <button type="button" data-action="alpdeskdialog#open">Open modal</button>
+</div>
