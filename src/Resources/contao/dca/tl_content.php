@@ -53,5 +53,5 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['alpdeskDialogOpenButtonLabel'] = [
     'search' => false,
     'inputType' => 'text',
     'eval' => array('mandatory' => false, 'tl_class' => 'w50'),
-    'sql' => "varchar(255) COLLATE ascii_bin NOT NULL default ''"
+    'sql' => "varchar(250) NOT NULL default ''"
 ];
