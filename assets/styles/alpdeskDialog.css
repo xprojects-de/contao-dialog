@@ -7,6 +7,10 @@ dialog[data-alpdeskdialog-backdrop="true"] {
     box-shadow: 0 0 0 100vw rgb(0 0 0 / 0.5);
 }
 
+dialog[data-alpdeskdialog-backdrop="false"] {
+    background: none;
+}
+
 dialog[data-alpdeskdialog-target="dialog"] {
     border: none;
     background: #fff;

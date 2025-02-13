@@ -4,12 +4,13 @@ export default class AlpdeskDialogController extends Dialog {
 
     static values = {
         opendelay: {
-            type: Number,
-            default: 0
+            type: Number, default: 0
         },
         scrolldelay: {
-            type: Number,
-            default: 0
+            type: Number, default: 0
+        },
+        backdrop: {
+            type: Boolean, default: false
         }
     }
 
@@ -42,6 +43,15 @@ export default class AlpdeskDialogController extends Dialog {
 
             });
 
+        }
+
+    }
+
+    backdropClose(event) {
+
+        const backdrop = this.backdropValue;
+        if (backdrop === true) {
+            super.backdropClose(event);
         }
 
     }
