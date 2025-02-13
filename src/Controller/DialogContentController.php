@@ -8,6 +8,7 @@ use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Contao\CoreBundle\Twig\FragmentTemplate;
+use Contao\StringUtil;
 use Symfony\Component\Asset\Packages;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -50,7 +51,10 @@ class DialogContentController extends AbstractContentElementController
             $backDrop = 'false';
         }
 
-        $template->set('dialogId', $model->id);
+        $cssID = StringUtil::deserialize($model->cssID, true);
+
+        $template->set('dialogId', \trim($cssID[0]) !== '' ? \trim($cssID[0]) : 'alpdeskDialog' . $model->id);
+        $template->set('dialogClass', \trim($cssID[1]) !== '' ? \trim($cssID[1]) : 'alpdeskDialog');
         $template->set('dialogContent', $dialogContent);
         $template->set('dialogOpenDelay', (int)($model->alpdeskDialogOpenDelay ?? 0));
         $template->set('dialogScrollDelay', (int)($model->alpdeskDialogScrollDelay ?? 0));
