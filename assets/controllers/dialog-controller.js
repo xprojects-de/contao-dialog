@@ -46,10 +46,4 @@ export default class AlpdeskDialogController extends Dialog {
 
     }
 
-    // Function to override on open.
-    open() {
-        super.open();
-        console.info('Open');
-    }
-
 }
