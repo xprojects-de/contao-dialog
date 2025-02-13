@@ -7,12 +7,6 @@ dialog[data-alpdeskdialog-backdrop="true"] {
     box-shadow: 0 0 0 100vw rgb(0 0 0 / 0.5);
 }
 
-dialog[data-alpdeskdialog-backdrop="false"]::backdrop {
-    box-shadow: none;
-    opacity: 0;
-    display: none;
-}
-
 dialog[data-alpdeskdialog-target="dialog"] {
     border: none;
     background: #fff;
@@ -22,24 +16,58 @@ dialog[data-alpdeskdialog-position="top-center"] {
     margin: 0 auto auto auto;
 }
 
+dialog[data-alpdeskdialog-backdropposition="false-top-center"] {
+    position: fixed;
+    top: 0;
+}
+
 dialog[data-alpdeskdialog-position="top-left"] {
     margin: 0 auto auto 0;
+}
+
+dialog[data-alpdeskdialog-backdropposition="false-top-left"] {
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 dialog[data-alpdeskdialog-position="top-right"] {
     margin: 0 0 auto auto;
 }
 
+dialog[data-alpdeskdialog-backdropposition="false-top-right"] {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
 dialog[data-alpdeskdialog-position="bottom-center"] {
     margin: auto auto 0 auto;
+}
+
+dialog[data-alpdeskdialog-backdropposition="false-bottom-center"] {
+    position: fixed;
+    bottom: 0;
 }
 
 dialog[data-alpdeskdialog-position="bottom-left"] {
     margin: auto auto 0 0;
 }
 
+dialog[data-alpdeskdialog-backdropposition="false-bottom-left"] {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
 dialog[data-alpdeskdialog-position="bottom-right"] {
     margin: auto 0 0 auto;
+}
+
+dialog[data-alpdeskdialog-backdropposition="false-bottom-right"] {
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 
 @keyframes alpdesk-fade-in {

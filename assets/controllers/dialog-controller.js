@@ -47,6 +47,17 @@ export default class AlpdeskDialogController extends Dialog {
 
     }
 
+    open() {
+
+        const backdrop = this.backdropValue;
+        if (backdrop === true) {
+            super.open();
+        } else {
+            this.dialogTarget.show();
+        }
+
+    }
+
     backdropClose(event) {
 
         const backdrop = this.backdropValue;
