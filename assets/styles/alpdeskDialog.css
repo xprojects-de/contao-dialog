@@ -7,8 +7,10 @@ dialog[data-alpdeskdialog-backdrop="true"] {
     box-shadow: 0 0 0 100vw rgb(0 0 0 / 0.5);
 }
 
-dialog[data-alpdeskdialog-backdrop="false"] {
-    background: none;
+dialog[data-alpdeskdialog-backdrop="false"]::backdrop {
+    box-shadow: none;
+    opacity: 0;
+    display: none;
 }
 
 dialog[data-alpdeskdialog-target="dialog"] {
@@ -55,24 +57,6 @@ dialog[data-alpdeskdialog-position="bottom-right"] {
     }
     100% {
         opacity: 0;
-    }
-}
-
-@keyframes alpdesk-slide-in {
-    from {
-        transform: translateY(15%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-@keyframes alpdesk-slide-out {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-10%);
     }
 }
 
