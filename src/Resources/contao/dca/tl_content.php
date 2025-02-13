@@ -4,10 +4,20 @@ declare(strict_types=1);
 
 
 use Alpdesk\AlpdeskDialog\Controller\DialogContentController;
+use Alpdesk\AlpdeskDialog\Controller\NestedDialogContentController;
 
 $GLOBALS['TL_DCA']['tl_content']['palettes'][DialogContentController::TYPE] = '
   {title_legend},name,type;
   alpdeskDialogText,alpdeskDialogUnfilteredHtml;
+  alpdeskDialogOpenDelay,alpdeskDialogScrollDelay,alpdeskDialogOpenButtonLabel;
+  alpdeskDialogDisableBackdrop,alpdeskDialogDisablePreventScroll,alpdeskDialogPosition;
+  {template_legend:hide},customTpl;
+  {expert_legend:hide},cssID;
+  {invisible_legend:hide},invisible,start,stop
+';
+
+$GLOBALS['TL_DCA']['tl_content']['palettes'][NestedDialogContentController::TYPE] = '
+  {title_legend},name,type;
   alpdeskDialogOpenDelay,alpdeskDialogScrollDelay,alpdeskDialogOpenButtonLabel;
   alpdeskDialogDisableBackdrop,alpdeskDialogDisablePreventScroll,alpdeskDialogPosition;
   {template_legend:hide},customTpl;
