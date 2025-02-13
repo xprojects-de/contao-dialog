@@ -1,9 +1,27 @@
-import Dialog from "@stimulus-components/dialog"
+import Dialog from '@stimulus-components/dialog'
 
 export default class AlpdeskDialogController extends Dialog {
+
+    static values = {
+        opendelay: {
+            type: Number,
+            default: 0
+        }
+    }
+
     connect() {
         super.connect()
-        console.log("Hello Dialog")
+
+        const delayOpen = this.opendelayValue;
+
+        if (delayOpen > 0) {
+
+            setTimeout(() => {
+                this.open();
+            }, delayOpen * 1000);
+
+        }
+
     }
 
     // Function to override on open.
@@ -12,15 +30,4 @@ export default class AlpdeskDialogController extends Dialog {
         console.info('Open');
     }
 
-    // Function to override on close.
-    close() {
-        super.close();
-        console.info('close');
-    }
-
-    // Function to override on backdropClose.
-    backdropClose(event) {
-        super.backdropClose(event);
-        console.info('backdropClose');
-    }
 }

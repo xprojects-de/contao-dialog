@@ -42,6 +42,7 @@ class DialogModuleController extends AbstractFrontendModuleController
 
         $template->set('dialogId', $model->id);
         $template->set('dialogContent', $dialogContent);
+        $template->set('dialogOpenDelay', 0);
         $template->set('closeIconUrl', $this->packages->getUrl('images/close.svg', 'alpdesk_dialog'));
 
         return $template->getResponse();
