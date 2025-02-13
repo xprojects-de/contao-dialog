@@ -1,0 +1,41 @@
+name: CIRELEASE
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  pre-release:
+    name: Pre-Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d_%s')"
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - run: mkdir -p artifact
+
+      - name: Zip
+        uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r artifact/release_alpdesk-dialog_${{ steps.date.outputs.date }}.zip src composer.json
+
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: release_alpdesk-dialog_${{ steps.date.outputs.date }}.zip
+          path: artifact/release_alpdesk-dialog_${{ steps.date.outputs.date }}.zip
+
+      - name: Release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: ${{ steps.date.outputs.date }}
+          prerelease: true
+          title: Master-${{ steps.date.outputs.date }}
+          files: |
+            artifact/release_alpdesk-dialog_${{ steps.date.outputs.date }}.zip
