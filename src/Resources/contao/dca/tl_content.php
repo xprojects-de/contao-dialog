@@ -2,16 +2,17 @@
 
 declare(strict_types=1);
 
-use Alpdesk\AlpdeskDialog\Controller\DialogModuleController;
 
-$GLOBALS['TL_DCA']['tl_module']['palettes'][DialogModuleController::TYPE] = '
+use Alpdesk\AlpdeskDialog\Controller\DialogContentController;
+
+$GLOBALS['TL_DCA']['tl_content']['palettes'][DialogContentController::TYPE] = '
   {title_legend},name,type;
   alpdeskDialogText,alpdeskDialogUnfilteredHtml;
   {template_legend:hide},customTpl;
   {expert_legend:hide},cssID
 ';
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['alpdeskDialogUnfilteredHtml'] = [
+$GLOBALS['TL_DCA']['tl_content']['fields']['alpdeskDialogUnfilteredHtml'] = [
     'exclude' => true,
     'search' => false,
     'inputType' => 'textarea',
@@ -20,7 +21,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['alpdeskDialogUnfilteredHtml'] = [
     'sql' => "mediumtext NULL"
 ];
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['alpdeskDialogText'] = [
+$GLOBALS['TL_DCA']['tl_content']['fields']['alpdeskDialogText'] = [
     'exclude' => true,
     'search' => false,
     'inputType' => 'textarea',

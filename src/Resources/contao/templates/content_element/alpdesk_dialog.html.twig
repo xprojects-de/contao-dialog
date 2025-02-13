@@ -1,0 +1,19 @@
+<div id="alpdeskDialog{{ dialogId }}" class="alpdeskDialog" data-controller="alpdeskdialog"
+     data-action="click->alpdeskdialog#backdropClose" data-alpdeskdialog-open-value="false">
+
+    <dialog class="alpdeskDialogOpen" data-alpdeskdialog-target="dialog">
+
+        <div class="alpdeskDialogClose">
+            <button data-action="alpdeskdialog#close" autofocus>
+                <img src="{{ closeIconUrl }}" alt="close dialog" title="close dialog" width="30">
+            </button>
+        </div>
+
+        <div class="alpdeskDialogContent">
+            {{ dialogContent | raw }}
+        </div>
+
+    </dialog>
+
+    <button type="button" data-action="alpdeskdialog#open">Open modal</button>
+</div>
