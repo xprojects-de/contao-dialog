@@ -19,8 +19,6 @@ parameters:
         - %currentWorkingDirectory%/src/Resources/*
 
     ignoreErrors:
-        - '#Access to an undefined property Contao\\Database#'
-        - '#Access to an undefined property Contao\\DataContainer#'
         - '#Cannot access property \$[a-zA-Z0-9\\_]+ on array<Contao\\MemberModel>|Contao\\Model\\Collection<Contao\\MemberModel>.#'
         - identifier: missingType.iterableValue
 
