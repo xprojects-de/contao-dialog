@@ -1,0 +1,12 @@
+{
+  "entrypoints": {
+    "alpdeskDialog": {
+      "css": [
+        "/bundles/alpdeskdialog/alpdeskDialog.3017cbf1.css"
+      ],
+      "js": [
+        "/bundles/alpdeskdialog/alpdeskDialog.1b6f40f6.js"
+      ]
+    }
+  }
+}
