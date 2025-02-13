@@ -79,6 +79,13 @@ export default class AlpdeskDialogController extends Dialog {
 
     storage() {
 
+        const delayOpen = this.opendelayValue;
+        const scrolldelay = this.scrolldelayValue;
+
+        if (delayOpen === 0 && scrolldelay === 0) {
+            return true;
+        }
+
         const storageKey = this.storagekeyValue;
         const storageExpiresHours = this.storageexpiresValue;
 
@@ -86,13 +93,8 @@ export default class AlpdeskDialogController extends Dialog {
 
             if (storageExpiresHours > 0) {
 
-                const now = new Date();
-
                 const date = new Date();
                 date.setTime(date.getTime() + (storageExpiresHours * 60 * 60 * 1000));
-
-                let valid = true;
-                let storeValue = true;
 
                 const currentStorageObject = localStorage.getItem(storageKey);
                 if (currentStorageObject !== null && currentStorageObject !== '') {
@@ -102,32 +104,31 @@ export default class AlpdeskDialogController extends Dialog {
                         const currentStorageValue = JSON.parse(currentStorageObject);
                         if (currentStorageValue.expires !== null && currentStorageValue.expires !== undefined && currentStorageValue.expires !== '') {
 
-                            const currentDate = Date.parse(currentStorageValue.expires);
-                            date.setTime(currentDate.getTime());
+                            const now = new Date();
 
-                            if (now.getTime() >= date.getTime()) {
-                                valid = false;
-                            } else {
-                                storeValue = false;
+                            if (now.getTime() >= currentStorageValue.expires) {
+
+                                localStorage.setItem(storageKey, JSON.stringify({
+                                    expires: date.getTime()
+                                }));
+
+                                return true;
                             }
+
+                            return false;
 
                         }
 
                     } catch (e) {
-
                     }
 
                 }
 
-                if (storeValue === true) {
+                localStorage.setItem(storageKey, JSON.stringify({
+                    expires: date.getTime()
+                }));
 
-                    localStorage.setItem(storageKey, JSON.stringify({
-                        expires: date.toDateString()
-                    }));
-
-                }
-
-                return valid;
+                return true;
 
             } else {
                 localStorage.removeItem(storageKey);
