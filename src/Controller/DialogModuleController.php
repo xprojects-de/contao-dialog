@@ -40,13 +40,23 @@ class DialogModuleController extends AbstractFrontendModuleController
             $dialogContent .= $htmlContent;
         }
 
+        $preventScroll = 'true';
+        if ($model->alpdeskDialogDisablePreventScroll === true || $model->alpdeskDialogDisablePreventScroll === '1') {
+            $preventScroll = 'false';
+        }
+
+        $backDrop = 'true';
+        if ($model->alpdeskDialogDisableBackdrop === true || $model->alpdeskDialogDisableBackdrop === '1') {
+            $backDrop = 'false';
+        }
+
         $template->set('dialogId', $model->id);
         $template->set('dialogContent', $dialogContent);
         $template->set('dialogOpenDelay', (int)($model->alpdeskDialogOpenDelay ?? 0));
         $template->set('dialogScrollDelay', (int)($model->alpdeskDialogScrollDelay ?? 0));
         $template->set('dialogOpenButtonLabel', (string)($model->alpdeskDialogOpenButtonLabel ?? ''));
-        $template->set('dialogPreventScroll', 'true');
-        $template->set('dialogBackdrop', 'true');
+        $template->set('dialogPreventScroll', $preventScroll);
+        $template->set('dialogBackdrop', $backDrop);
         $template->set('closeIconUrl', $this->packages->getUrl('images/close.svg', 'alpdesk_dialog'));
 
         return $template->getResponse();
