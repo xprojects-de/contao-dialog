@@ -2,7 +2,9 @@
      data-action="click->alpdeskdialog#backdropClose" data-alpdeskdialog-opendelay-value="{{ dialogOpenDelay }}"
      data-alpdeskdialog-scrolldelay-value="{{ dialogScrollDelay }}">
 
-    <dialog class="alpdeskDialogOpen" data-alpdeskdialog-target="dialog">
+    <dialog class="alpdeskDialogOpen" data-alpdeskdialog-target="dialog"
+            data-alpdeskdialog-preventScroll="{{ dialogPreventScroll }}"
+            data-alpdeskdialog-backdrop="{{ dialogBackdrop }}">
 
         <div class="alpdeskDialogClose">
             <button data-action="alpdeskdialog#close" autofocus>

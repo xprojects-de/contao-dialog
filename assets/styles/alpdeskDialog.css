@@ -1,15 +1,18 @@
 
-body:has(dialog[data-alpdeskdialog-target="dialog"][open]) {
+body:has(dialog[data-alpdeskdialog-preventScroll="true"][open]) {
     overflow: hidden;
 }
 
-dialog[data-alpdeskdialog-target="dialog"] {
+dialog[data-alpdeskdialog-backdrop="true"] {
     box-shadow: 0 0 0 100vw rgb(0 0 0 / 0.5);
+}
+
+dialog[data-alpdeskdialog-target="dialog"] {
     border: none;
     background: #fff;
 }
 
-@keyframes fade-in {
+@keyframes alpdesk-fade-in {
     0% {
         opacity: 0;
     }
@@ -18,7 +21,7 @@ dialog[data-alpdeskdialog-target="dialog"] {
     }
 }
 
-@keyframes fade-out {
+@keyframes alpdesk-fade-out {
     0% {
         opacity: 1;
     }
@@ -28,11 +31,11 @@ dialog[data-alpdeskdialog-target="dialog"] {
 }
 
 dialog[data-alpdeskdialog-target="dialog"][open] {
-    animation: fade-in 300ms forwards;
+    animation: alpdesk-fade-in 250ms forwards;
 }
 
 dialog[data-alpdeskdialog-target="dialog"][closing] {
-    animation: fade-out 300ms forwards;
+    animation: alpdesk-fade-out 250ms forwards;
 }
 
 dialog[data-alpdeskdialog-target="dialog"] .alpdeskDialogClose {
