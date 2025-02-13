@@ -11,7 +11,8 @@ $GLOBALS['TL_DCA']['tl_content']['palettes'][DialogContentController::TYPE] = '
   alpdeskDialogOpenDelay,alpdeskDialogScrollDelay,alpdeskDialogOpenButtonLabel;
   alpdeskDialogDisableBackdrop,alpdeskDialogDisablePreventScroll,alpdeskDialogPosition;
   {template_legend:hide},customTpl;
-  {expert_legend:hide},cssID
+  {expert_legend:hide},cssID;
+  {invisible_legend:hide},invisible,start,stop
 ';
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['alpdeskDialogUnfilteredHtml'] = [
