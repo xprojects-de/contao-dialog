@@ -35,9 +35,11 @@ class NestedDialogContentController extends AbstractContentElementController
         }
 
         $cssID = StringUtil::deserialize($model->cssID, true);
+        $styleId = (string)($cssID[0] ?? '');
+        $styleClass = (string)($cssID[1] ?? '');
 
-        $template->set('dialogId', \trim($cssID[0]) !== '' ? \trim($cssID[0]) : 'alpdeskDialog' . $model->id);
-        $template->set('dialogClass', \trim($cssID[1]) !== '' ? \trim($cssID[1]) : 'alpdeskDialog');
+        $template->set('dialogId', \trim($styleId) !== '' ? \trim($styleId) : 'alpdeskDialog' . $model->id);
+        $template->set('dialogClass', \trim($styleClass) !== '' ? \trim($styleClass) : 'alpdeskDialog');
         $template->set('dialogOpenDelay', (int)($model->alpdeskDialogOpenDelay ?? 0));
         $template->set('dialogScrollDelay', (int)($model->alpdeskDialogScrollDelay ?? 0));
         $template->set('dialogOpenButtonLabel', (string)($model->alpdeskDialogOpenButtonLabel ?? ''));
