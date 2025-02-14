@@ -1,3 +1,92 @@
+@keyframes alpdesk-fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes alpdesk-fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes alpdesk-slide-in-left {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes alpdesk-slide-out-left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes alpdesk-slide-in-right {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes alpdesk-slide-out-right {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes alpdesk-slide-in-bottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes alpdesk-slide-out-bottom {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes alpdesk-slide-in-top {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes alpdesk-slide-out-top {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
 
 body:has(dialog[data-alpdeskdialog-modal-value="true"][open]) {
     overflow: hidden;
@@ -71,35 +160,49 @@ div[data-alpdeskdialog-modalposition="false-bottom-right"] dialog {
     z-index: 1;
 }
 
-@keyframes alpdesk-fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes alpdesk-fade-out {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
 dialog[data-alpdeskdialog-target="dialog"] {
     border: none;
     background: #fff;
 }
 
-dialog[data-alpdeskdialog-target="dialog"][open] {
-    animation: alpdesk-fade-in 250ms forwards;
+dialog[data-alpdeskdialog-transform="fade"][open] {
+    animation: alpdesk-fade-in 275ms forwards;
 }
 
-dialog[data-alpdeskdialog-target="dialog"][closing] {
-    animation: alpdesk-fade-out 250ms forwards;
+dialog[data-alpdeskdialog-transform="fade"][closing] {
+    animation: alpdesk-fade-out 275ms forwards;
+}
+
+dialog[data-alpdeskdialog-transform="left"][open] {
+    animation: alpdesk-slide-in-left 275ms forwards;
+}
+
+dialog[data-alpdeskdialog-transform="left"][closing] {
+    animation: alpdesk-slide-out-left 275ms forwards;
+}
+
+dialog[data-alpdeskdialog-transform="right"][open] {
+    animation: alpdesk-slide-in-right 275ms forwards;
+}
+
+dialog[data-alpdeskdialog-transform="right"][closing] {
+    animation: alpdesk-slide-out-right 275ms forwards;
+}
+
+dialog[data-alpdeskdialog-transform="top"][open] {
+    animation: alpdesk-slide-in-top 275ms forwards;
+}
+
+dialog[data-alpdeskdialog-transform="top"][closing] {
+    animation: alpdesk-slide-out-top 275ms forwards;
+}
+
+dialog[data-alpdeskdialog-transform="bottom"][open] {
+    animation: alpdesk-slide-in-bottom 275ms forwards;
+}
+
+dialog[data-alpdeskdialog-transform="bottom"][closing] {
+    animation: alpdesk-slide-out-bottom 275ms forwards;
 }
 
 dialog[data-alpdeskdialog-target="dialog"] .alpdeskDialogClose {

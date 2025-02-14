@@ -8,7 +8,7 @@ $GLOBALS['TL_DCA']['tl_module']['palettes'][DialogModuleController::TYPE] = '
   {title_legend},name,type;
   alpdeskDialogText,alpdeskDialogUnfilteredHtml;
   alpdeskDialogOpenDelay,alpdeskDialogScrollDelay,alpdeskDialogStorageExpires,alpdeskDialogOpenButtonLabel;
-  alpdeskDialogPosition,alpdeskDialogDisableModal;
+  alpdeskDialogPosition,alpdeskdialogTransform,alpdeskDialogDisableModal;
   {template_legend:hide},customTpl;
   {expert_legend:hide},cssID
 ';
@@ -77,5 +77,14 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['alpdeskDialogPosition'] = [
     'inputType' => 'select',
     'options' => array('center', 'top-center', 'top-left', 'top-right', 'bottom-center', 'bottom-left', 'bottom-right'),
     'eval' => array('mandatory' => true, 'tl_class' => 'w50'),
-    'sql' => "varchar(250) NOT NULL default 'center'"
+    'sql' => "varchar(32) NOT NULL default 'center'"
+];
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['alpdeskdialogTransform'] = [
+    'exclude' => true,
+    'search' => false,
+    'inputType' => 'select',
+    'options' => array('fade', 'left', 'right', 'top', 'bottom'),
+    'eval' => array('mandatory' => true, 'tl_class' => 'w50'),
+    'sql' => "varchar(32) NOT NULL default ''"
 ];

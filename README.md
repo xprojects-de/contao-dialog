@@ -21,6 +21,7 @@ Additional features for elements and module (can be combined):
 - scroll value (in %)
 - expiration time (in hours) dialog is hidden after first view
 - dialog position - centered, bottom (left,center,right), top (left,center,right)
+- dialog transform - fade, left, right, top, bottom
 - show as modal (blocking content) or normal dialog (no blocking content)
 
 Feel free to customize the bundle :-)
