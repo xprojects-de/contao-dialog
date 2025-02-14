@@ -10,3 +10,4 @@ $GLOBALS['TL_LANG']['tl_content']['alpdeskDialogStorageExpires'] = array('Dialog
 $GLOBALS['TL_LANG']['tl_content']['alpdeskDialogOpenButtonLabel'] = array('Dialog Button-Label', 'Button-Label if button to open should be displayed');
 $GLOBALS['TL_LANG']['tl_content']['alpdeskDialogDisableModal'] = array('Dialog disable Modal', '');
 $GLOBALS['TL_LANG']['tl_content']['alpdeskDialogPosition'] = array('Dialog position', '');
+$GLOBALS['TL_LANG']['tl_content']['alpdeskdialogTransform'] = array('Dialog Transform', 'Transform how the dialog is displayed');

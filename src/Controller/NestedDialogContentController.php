@@ -47,6 +47,7 @@ class NestedDialogContentController extends AbstractContentElementController
         $template->set('dialogStorageKey', 'nestedAlpdeskDialog' . $model->id);
         $template->set('dialogStorageExpires', (int)($model->alpdeskDialogStorageExpires ?? 0));
         $template->set('dialogPosition', (string)($model->alpdeskDialogPosition ?? 'center'));
+        $template->set('dialogTransform', (string)($model->alpdeskdialogTransform ?? 'fade'));
         $template->set('closeIconUrl', $this->packages->getUrl('images/close.svg', 'alpdesk_dialog'));
 
         return $template->getResponse();
