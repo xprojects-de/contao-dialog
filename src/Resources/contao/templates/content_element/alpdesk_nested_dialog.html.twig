@@ -52,8 +52,14 @@
         {% block dialog_open %}
 
             {% if dialogOpenButtonLabel != '' %}
-                <button type="button" class="alpdeskDialogOpenAction"
-                        data-action="alpdeskdialog#open">{{ dialogOpenButtonLabel }}</button>
+
+                {% block dialog_open_action %}
+
+                    <button type="button" class="alpdeskDialogOpenAction"
+                            data-action="alpdeskdialog#open">{{ dialogOpenButtonLabel }}</button>
+
+                {% endblock %}
+
             {% endif %}
 
         {% endblock %}
