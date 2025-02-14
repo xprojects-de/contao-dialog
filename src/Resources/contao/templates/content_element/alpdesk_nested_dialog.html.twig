@@ -1,37 +1,63 @@
-<div id="{{ dialogId }}" class="{{ dialogClass }}"
-     data-controller="alpdeskdialog"
-     data-action="click->alpdeskdialog#backdropClose"
-     data-alpdeskdialog-opendelay-value="{{ dialogOpenDelay }}"
-     data-alpdeskdialog-scrolldelay-value="{{ dialogScrollDelay }}"
-     data-alpdeskdialog-modal-value="{{ dialogModal }}"
-     data-alpdeskdialog-storagekey-value="{{ dialogStorageKey }}"
-     data-alpdeskdialog-storageexpires-value="{{ dialogStorageExpires }}"
-     data-alpdeskdialog-position="{{ dialogPosition }}"
-     data-alpdeskdialog-modalposition="{{ dialogModal }}-{{ dialogPosition }}"
->
+{% block dialog_wrapper %}
 
-    <dialog class="alpdeskDialogOpen" data-alpdeskdialog-target="dialog"
-            data-alpdeskdialog-modal-value="{{ dialogModal }}">
+    <div id="{{ dialogId }}" class="{{ dialogClass }}"
+         data-controller="alpdeskdialog"
+         data-action="click->alpdeskdialog#backdropClose"
+         data-alpdeskdialog-opendelay-value="{{ dialogOpenDelay }}"
+         data-alpdeskdialog-scrolldelay-value="{{ dialogScrollDelay }}"
+         data-alpdeskdialog-modal-value="{{ dialogModal }}"
+         data-alpdeskdialog-storagekey-value="{{ dialogStorageKey }}"
+         data-alpdeskdialog-storageexpires-value="{{ dialogStorageExpires }}"
+         data-alpdeskdialog-position="{{ dialogPosition }}"
+         data-alpdeskdialog-modalposition="{{ dialogModal }}-{{ dialogPosition }}"
+    >
 
-        <div class="alpdeskDialogClose">
-            <button data-action="alpdeskdialog#close">
-                <img src="{{ closeIconUrl }}" alt="" title="" width="30">
-            </button>
-        </div>
+        {% block dialog %}
 
-        <div class="alpdeskDialogContent">
+            <dialog class="alpdeskDialogOpen" data-alpdeskdialog-target="dialog"
+                    data-alpdeskdialog-modal-value="{{ dialogModal }}">
 
-            {% for fragment in nested_fragments %}
-                {{ content_element(fragment) }}
-            {% endfor %}
+                {% block dialog_close %}
 
-        </div>
+                    <div class="alpdeskDialogClose">
 
-    </dialog>
+                        {% block dialog_close_action %}
 
-    {% if dialogOpenButtonLabel != '' %}
-        <button type="button" class="alpdeskDialogOpenAction"
-                data-action="alpdeskdialog#open">{{ dialogOpenButtonLabel }}</button>
-    {% endif %}
+                            <button data-action="alpdeskdialog#close">
+                                <img src="{{ closeIconUrl }}" alt="" title="" width="30">
+                            </button>
 
-</div>
+                        {% endblock %}
+
+                    </div>
+
+                {% endblock %}
+
+                {% block dialog_content %}
+
+                    <div class="alpdeskDialogContent">
+
+                        {% for fragment in nested_fragments %}
+                            {{ content_element(fragment) }}
+                        {% endfor %}
+
+                    </div>
+
+                {% endblock %}
+
+            </dialog>
+
+        {% endblock %}
+
+        {% block dialog_open %}
+
+            {% if dialogOpenButtonLabel != '' %}
+                <button type="button" class="alpdeskDialogOpenAction"
+                        data-action="alpdeskdialog#open">{{ dialogOpenButtonLabel }}</button>
+            {% endif %}
+
+        {% endblock %}
+
+    </div>
+
+{% endblock %}
